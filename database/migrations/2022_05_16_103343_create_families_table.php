@@ -15,7 +15,7 @@ class CreateFamiliesTable extends Migration
     {
         Schema::create('families', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained('employees')->cascadeOnDelete();
+            $table->foreignId('employee_id')->constrained('employees','employee_id')->cascadeOnDelete();
             $table->string('full_name');
             $table->string('id_number');
             $table->string('relation');

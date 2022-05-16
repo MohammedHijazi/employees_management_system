@@ -15,7 +15,7 @@ class CreateExpertisesTable extends Migration
     {
         Schema::create('expertises', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained('employees')->cascadeOnDelete();
+            $table->foreignId('employee_id')->constrained('employees','employee_id')->cascadeOnDelete();
             $table->string('place_of_work');
             $table->string('job_title');
             $table->decimal('salary',9,3)->default(0);

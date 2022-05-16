@@ -15,7 +15,7 @@ class CreateAcademicDegreesTable extends Migration
     {
         Schema::create('academic_degrees', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained('employees')->cascadeOnDelete();
+            $table->foreignId('employee_id')->constrained('employees','employee_id')->cascadeOnDelete();
             $table->string('educational_qualification');
             $table->string('college');
             $table->string('college_major');
