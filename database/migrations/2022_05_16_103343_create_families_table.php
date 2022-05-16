@@ -19,7 +19,7 @@ class CreateFamiliesTable extends Migration
             $table->string('full_name');
             $table->string('id_number');
             $table->string('relation');
-            $table->date('birthday_date');
+            $table->date('birth_date');
             $table->enum('social_status',['single','married'])->default('single');
             $table->enum('study',['yes','no'])->default('yes');
             $table->enum('works',['yes','no'])->default('no');

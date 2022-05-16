@@ -21,12 +21,12 @@ class CreateEmployeesTable extends Migration
             $table->string('last_name');
             $table->string('specialization');
             $table->enum('social_status',['single','married'])->default('single');
-            $table->enum('sex',['male','female']);
+            $table->enum('gender',['male','female']);
             $table->string('mobile_number');
             $table->string('phone_number')->nullable();
             $table->string('email');
             $table->date('hiring_date');
-            $table->date('birthday_date');
+            $table->date('birth_date');
             $table->string('address');
             $table->string('image_path')->nullable();
             $table->timestamps();
