@@ -43,5 +43,9 @@ class Employee extends Model
         return $this->hasMany(Expertise::class);
     }
 
+    public function families(){
+        return$this->hasMany(Family::class);
+    }
+
 
 }
