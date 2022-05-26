@@ -1,17 +1,12 @@
 @extends('employees-mgmt.base')
 
-
-
+@include('layouts.header')
+@include('layouts.sidebar')
 @section('action-content')
     <section class="content">
         <div class="box">
             <div class="box-header">
                 @include('flash_message')
-                <div class="row">
-                    <div class="col-sm-8">
-                        <h3 class="box-title" style="font-weight:bolder; text-transform:uppercase; font-family: 'Times New Roman', Times, serif">Edit Employee</h3>
-                    </div>
-                </div>
             </div>
             <div class="box-body">
                 <div class="container">
@@ -144,8 +139,8 @@
                                         <div class="col-md-4">
                                             <select class="form-control" name="gender">
                                                 <option disabled>Select Gender</option>
-                                                <option value="male"  >Male</option>
-                                                <option value="female">Female</option>
+                                                <option {{$employee->gender == 'male' ? 'selected' : ''}} value="male"  >Male</option>
+                                                <option {{$employee->gender == 'female' ? 'selected': ''}} value="female">Female</option>
                                             </select>
                                             @if ($errors->has('gender'))
                                                 <span class="help-block">
@@ -156,9 +151,9 @@
 
                                         <div class="col-md-4">
                                             <select class="form-control" name="social_status">
-                                                <option selected disabled>Social status</option>
-                                                <option value="single">Single</option>
-                                                <option value="married">married</option>
+                                                <option disabled>Social status</option>
+                                                <option {{$employee->social_status == 'single' ? 'selected' : ''}} value="single">Single</option>
+                                                <option {{$employee->social_status == 'married' ? 'selected' : ''}} value="married">Married</option>
                                             </select>
 
                                             @if ($errors->has('social_status'))
@@ -172,7 +167,7 @@
                                                 <img src="{{asset('storage/'.$employee->image_path)}}" width="300px" height="300px"/>
                                                 <input type="file" id="image" name="image" />
                                             </div>
-                                        <div class="col-md-8" style="margin-top: -262px;">
+                                        <div class="col-md-8" style="margin-top: -215px;">
                                             <textarea id="address" type="text" class="form-control" name="address"  required>{{ $employee->address }}</textarea>
 
                                             @if ($errors->has('address'))
