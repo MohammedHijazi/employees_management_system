@@ -168,11 +168,11 @@
                                             @endif
                                         </div>
 
-                                            <div class="col-md-4">
-                                                <img src="#" width="50px" height="50px"/>
-                                                <input type="file" id="picture" name="picture" />
+                                            <div class="col-md-4" style="margin-top:-50px ">
+                                                <img src="{{asset('storage/'.$employee->image_path)}}" width="300px" height="300px"/>
+                                                <input type="file" id="image" name="image" />
                                             </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-8" style="margin-top: -262px;">
                                             <textarea id="address" type="text" class="form-control" name="address"  required>{{ $employee->address }}</textarea>
 
                                             @if ($errors->has('address'))

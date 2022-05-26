@@ -10,7 +10,7 @@ class EmployeesController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
@@ -54,6 +54,15 @@ class EmployeesController extends Controller
             'gender'=>'required|in:male,female',
             'image_path'=>'image',
         ]);
+
+        if($request->hasFile('image')){
+            $file=$request->file('image');
+            $image_path=$file->store('uploads',[
+                'disk'=>'public'
+            ]);
+            $request->merge(['image_path'=>$image_path]);
+        }
+        //hence I have to run php artisan storage:link command to make the image_path work
 
         Employee::create($request->all());
         return redirect()->back()->with('success','Employee added successfully');
@@ -111,6 +120,13 @@ class EmployeesController extends Controller
             'gender'=>'required|in:male,female',
             'image_path'=>'image',
         ]);
+        if($request->hasFile('image')){
+            $file=$request->file('image');
+            $image_path=$file->store('uploads',[
+                'disk'=>'public'
+            ]);
+            $request->merge(['image_path'=>$image_path]);
+        }
 
         $employee->update($request->all());
         return redirect()->route('employees.index')->with('success', "Employee with ID ($employee->employee_id) updated.");

@@ -175,7 +175,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <input type="file" id="image_path" name="image_path" >
+                                <input type="file" id="image" name="image" >
                             </div>
                             <br><br>
                             <div class="col-md-12"></div>

@@ -41,7 +41,7 @@
             <tbody>
               @foreach ($employees as $employee)
                 <tr role="row" class="odd">
-                  <td><img src="#"  class="user-image" width="50px" height="50px"/></td>
+                  <td><img src="{{asset('storage/'.$employee->image_path)}}"  class="user-image" width="50px" height="50px"/></td>
                     <td class="hidden-xs">{{$employee->employee_id}}</td>
                   <td >{{ $employee->first_name }} {{$employee->second_name}} {{$employee->third_name}} {{$employee->last_name}} </td>
                   <td class="hidden-xs">{{$employee->specialization}}</td>
