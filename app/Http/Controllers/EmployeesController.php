@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EmployeesController extends Controller
 {
@@ -42,7 +43,7 @@ class EmployeesController extends Controller
             'second_name'=>'required|string|min:3|max:15',
             'third_name'=>'required|string|min:3|max:15',
             'last_name'=>'required|string|min:3|max:15',
-            'employee_id'=>'required|integer|min:000000000|max:999999999|digits_between: 0,9',
+            'employee_id'=>'required|integer|min:000000000|max:999999999|digits_between: 0,9|unique:employees,employee_id',
             'email'=>'required|email:rfc,dns',
             'address'=>'required|min:5|max:200',
             'mobile_number'=>'required',
@@ -108,7 +109,7 @@ class EmployeesController extends Controller
             'second_name'=>'required|string|min:3|max:15',
             'third_name'=>'required|string|min:3|max:15',
             'last_name'=>'required|string|min:3|max:15',
-            'employee_id'=>'required|integer|min:000000000|max:999999999|digits_between: 0,9',
+            'employee_id'=>'required|integer|min:000000000|max:999999999|digits_between: 0,9|unique:employees,employee_id',
             'email'=>'required|email:rfc,dns',
             'address'=>'required|min:5|max:200',
             'mobile_number'=>'required',
@@ -121,6 +122,7 @@ class EmployeesController extends Controller
             'image_path'=>'image',
         ]);
         if($request->hasFile('image')){
+            Storage::disk('public')->delete($employee->image_path);
             $file=$request->file('image');
             $image_path=$file->store('uploads',[
                 'disk'=>'public'
@@ -143,6 +145,7 @@ class EmployeesController extends Controller
     {
         $employee=Employee::findOrFail($id);
         $employee->destroy($id);
+        Storage::disk('public')->delete($employee->image_path);
         return redirect()->back()->with('success','Employee deleted successfully');
 
     }

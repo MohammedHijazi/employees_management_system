@@ -3,7 +3,7 @@
 @include('layouts.header')
 @include('layouts.sidebar')
 @section('action-content')
-    <section class="content">
+    <section class="content" >
         <div class="box">
             <div class="box-header">
                 @include('flash_message')
@@ -16,7 +16,7 @@
                                 <div class="panel-heading">
                                     <h3 style="font-weight:bolder; text-transform:uppercase; font-family: 'Times New Roman', Times, serif; color:red">Update employee</h3>
                                     </div>
-                                <div class="panel-body">
+                                <div class="panel-body" dir="ltr">
                                     <form class="form-horizontal" role="form" method="POST" action="{{ route('employees.update',$employee->employee_id ) }}" enctype="multipart/form-data">
                                         @method('put')
                                         @csrf
@@ -65,7 +65,7 @@
 
 
                                         <div class="col-md-3" >
-                                            <input id="employee_id" type="text" class="form-control" name="employee_id" value="{{ $employee->employee_id}}"  placeholder="Employee ID">
+                                            <input id="employee_id" type="text" class="form-control" name="employee_id" value="{{ $employee->employee_id}}"  placeholder="Employee ID" readonly>
 
                                             @if ($errors->has('employee_id'))
                                                 <span class="help-block">

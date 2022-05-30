@@ -1,25 +1,25 @@
  <!-- Modal -->
-  <div class="modal fade" id="addEmployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="addEmployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" dir="rtl">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content">
+      <div class="modal-content" >
         <div class="modal-header" style="background:#605ca8;color:white">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true" style="color:#fff">&times;</span>
               </button>
-          <h5 class="modal-title" id="exampleModalLongTitle" style="font-weight:bolder; text-transform:uppercase; font-family: 'Times New Roman', Times, serif">Add new employee</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle" style="font-weight:bolder; text-transform:uppercase; font-family: 'Times New Roman', Times, serif">{{__('Add employee')}}</h5>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" >
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="modal-title" id="exampleModalLongTitle" style="font-weight:bolder; text-transform:uppercase; font-family: 'Times New Roman', Times, serif; color:red"> New employee Portal</h3>
+                    <h3 class="modal-title" id="exampleModalLongTitle" style="font-weight:bolder; text-transform:uppercase; font-family: 'Times New Roman', Times, serif; color:red">{{__('New employee Portal')}} </h3>
                 </div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('employees.store') }}" enctype="multipart/form-data">
+                <div class="panel-body" dir="rtl">
+                    <form class="form-horizontal gg" role="form" method="POST" action="{{ route('employees.store') }}" enctype="multipart/form-data" >
                         @csrf
 
                         <div class="form-row">
                             <div class="col-md-3">
-                                <input id="first_name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}"  autofocus placeholder="First name">
+                                <input id="first_name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}"  autofocus placeholder="{{__('first_name')}}">
                                 @if ($errors->has('first_name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('first_name') }}</strong>
@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <input id="second_name" type="text" class="form-control" name="second_name" value="{{ old('second_name') }}"  placeholder="Second name">
+                            <input id="second_name" type="text" class="form-control" name="second_name" value="{{ old('second_name') }}"  placeholder="{{__('second_name')}}">
 
                             @if ($errors->has('second_name'))
                                 <span class="help-block">
@@ -37,7 +37,7 @@
                             @endif
                         </div>
                             <div class="col-md-3">
-                                <input id="third_name" type="text" class="form-control" name="third_name" value="{{ old('third_name') }}"  placeholder="Third name">
+                                <input id="third_name" type="text" class="form-control" name="third_name" value="{{ old('third_name') }}"  placeholder="{{__('third_name')}}">
 
                                 @if ($errors->has('third_name'))
                                     <span class="help-block">
@@ -46,7 +46,7 @@
                                 @endif
                             </div>
                             <div class="col-md-3">
-                                <input id="lastname" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}"  placeholder="Last name">
+                                <input id="lastname" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}"  placeholder="{{__('last_name')}}">
 
                                 @if ($errors->has('last_name'))
                                     <span class="help-block">
@@ -58,7 +58,7 @@
                             <br><br>
 
                             <div class="col-md-4">
-                                <input id="employee_id" type="text" class="form-control" name="employee_id" value="{{ old('employee_id') }}"  placeholder="Employee ID">
+                                <input id="employee_id" type="text" class="form-control" name="employee_id" value="{{ old('employee_id') }}"  placeholder="{{__('employee_id')}}">
 
                                 @if ($errors->has('employee_id'))
                                     <span class="help-block">
@@ -68,7 +68,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <input id="specialization" type="text" class="form-control" name="specialization" value="{{ old('specialization') }}" placeholder="Specialization">
+                                <input id="specialization" type="text" class="form-control" name="specialization" value="{{ old('specialization') }}" placeholder="{{__('specialization')}}">
 
                                 @if ($errors->has('specialization'))
                                     <span class="help-block">
@@ -78,7 +78,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}"  placeholder="Address">
+                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}"  placeholder="{{__('address')}}">
 
                                 @if ($errors->has('address'))
                                     <span class="help-block">
@@ -89,7 +89,7 @@
 
                              <br><br>
                             <div class="col-md-4">
-                                <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}"  placeholder="Email">
+                                <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}"  placeholder="{{__('email')}}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -99,7 +99,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <input id="mobile_number" type="text" class="form-control" name="mobile_number" value="{{ old('mobile_number') }}"  placeholder="Mobile number">
+                                <input id="mobile_number" type="text" class="form-control" name="mobile_number" value="{{ old('mobile_number') }}"  placeholder="{{__('mobile_number')}}">
 
                                 @if ($errors->has('mobile_number'))
                                     <span class="help-block">
@@ -109,7 +109,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <input id="phone_number" type="text" class="form-control" name="phone_number" value="{{ old('phone_number') }}"  placeholder="Phone number">
+                                <input id="phone_number" type="text" class="form-control" name="phone_number" value="{{ old('phone_number') }}"  placeholder="{{__('phone_number')}}">
 
                                 @if ($errors->has('phone_number'))
                                     <span class="help-block">
@@ -124,7 +124,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-                                    <input type="text" value="{{ old('birth_date') }}" name="birth_date" class="form-control" id="birth_date"  placeholder="Date of Birth" >
+                                    <input type="text" value="{{ old('birth_date') }}" name="birth_date" class="form-control" id="birth_date"  placeholder="{{__('birth_date')}}" >
                                     @if ($errors->has('birth_date'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('birth_date') }}</strong>
@@ -138,7 +138,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-                                    <input type="text" value="{{ old('hiring_date') }}" name="hiring_date" class="form-control pull-right" id="hiring_date"  placeholder="Hiring Date">
+                                    <input type="text" value="{{ old('hiring_date') }}" name="hiring_date" class="form-control pull-right" id="hiring_date"  placeholder="{{__('hiring_date')}}">
                                     @if ($errors->has('hiring_date'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('hiring_date') }}</strong>
@@ -149,9 +149,9 @@
                         <br><br>
                             <div class="col-md-4">
                                 <select class="form-control" name="gender">
-                                    <option selected disabled>Select Gender</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
+                                    <option selected disabled>{{__('Select')}} {{__('Gender')}}</option>
+                                        <option value="male">{{__('Male')}}</option>
+                                        <option value="female">{{__('Female')}}</option>
                                 </select>
                                  @if ($errors->has('gender'))
                                     <span class="help-block">
@@ -162,9 +162,9 @@
 
                             <div class="col-md-4">
                                 <select class="form-control" name="social_status">
-                                    <option selected disabled>Social status</option>
-                                    <option value="single">Single</option>
-                                    <option value="married">married</option>
+                                    <option selected disabled>{{__('Social Status')}}</option>
+                                    <option value="single">{{__('Single')}}</option>
+                                    <option value="married">{{__('Married')}}</option>
                                 </select>
 
                                  @if ($errors->has('social_status'))
@@ -184,8 +184,8 @@
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save Employee</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('Close')}}</button>
+          <button type="submit" class="btn btn-primary">{{__('Save Employee')}}</button>
         </div>
     </form>
       </div>
