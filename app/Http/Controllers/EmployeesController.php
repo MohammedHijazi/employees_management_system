@@ -65,10 +65,12 @@ class EmployeesController extends Controller
         $employee = Employee::findOrFail($id);
         $academic_degrees = $employee->academic_degrees;
         $courses = $employee->courses;
+        $expertises = $employee->expertises;
         return view('profile',[
             'employee'=>$employee,
             'academic_degrees'=>$academic_degrees,
-            'courses'=>$courses
+            'courses'=>$courses,
+            'expertises'=>$expertises
         ]);
     }
 

@@ -401,7 +401,107 @@
         </div>
     </div>
 </div>
+<!--------------------------------------------------------------------------------------------------------------------->
+<!--courses section-->
+<!--------------------------------------------------------------------------------------------------------------------->
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 ">
+            <form class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Expertises</legend>
+
+                    @foreach($expertises as $expertise)
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="ID">Place of work</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-location-arrow">
+                                        </i>
+                                    </div>
+                                    <input value="{{$expertise->place_of_work}}" type="text" placeholder="Place of work" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="college">Job title</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-bookmark">
+                                        </i>
+                                    </div>
+                                    <input value="{{$expertise->job_title}}"  type="text" placeholder="Job title" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="college">Salary</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-money">
+                                        </i>
+                                    </div>
+                                    <input value="{{$expertise->salary.' '.$expertise->currency}}"  type="text" placeholder="Salary" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Date Of Birth">Start Date</label>
+                            <div class="col-md-4">
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+
+                                    </div>
+                                    <input value="{{$expertise->start_date}}"  type="text" placeholder="Start Date" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Date Of Birth">End Date</label>
+                            <div class="col-md-4">
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+
+                                    </div>
+                                    <input value="{{$expertise->end_date}}"  type="text" placeholder="End Date" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Overview (max 200 words)">Details</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control" rows="3" readonly>{{$expertise->details}}</textarea>
+                            </div>
+                        </div>
+
+                        <br><br>
+                    @endforeach
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
 <script src="{{ asset ("/bower_components/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js") }}"></script>
 <script src="{{ asset ("/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js") }}" type="text/javascript"></script>
 
