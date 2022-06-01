@@ -31,6 +31,12 @@ class Employee extends Model
         'image_path'
     ];
 
+
+    public function getfullNameAttribute(){
+        return $this->attributes['first_name'].' '.$this->attributes['second_name'].' '.$this->attributes['third_name'].' '.$this->attributes['last_name'];
+    }
+
+
     public function academic_degrees(){
         return $this->hasMany(AcademicDegree::class);
     }

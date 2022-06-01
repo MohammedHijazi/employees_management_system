@@ -22,3 +22,4 @@ Route::resource('employees','EmployeesController');
 Route::resource('degrees','AcademicDegreesController');
 
 Route::resource('courses','CoursesController');
+

@@ -3,5 +3,7 @@
 
 ## About Project
 
-Employees management system built with laravel.
+Simple Employee management system built with laravel.
+
+Feel free to use this project as a starting point for your own projects.
 
