@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AcademicDegree;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -62,8 +63,11 @@ class EmployeesController extends Controller
     {
 
         $employee = Employee::findOrFail($id);
+        $academic_degrees = $employee->academic_degrees;
+
         return view('profile',[
-            'employee'=>$employee
+            'employee'=>$employee,
+            'academic_degrees'=>$academic_degrees
         ]);
     }
 

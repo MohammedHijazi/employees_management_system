@@ -47,7 +47,7 @@
             <form class="form-horizontal">
                 <fieldset>
                     <!-- Form Name -->
-                    <legend>User profile</legend>
+                    <legend>Employee profile</legend>
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="ID">ID</label>
@@ -211,7 +211,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Overview (max 200 words)">Address</label>
                         <div class="col-md-4">
-                            <textarea class="form-control" rows="2" >{{$employee->address}}</textarea>
+                            <textarea class="form-control" rows="2" readonly>{{$employee->address}}</textarea>
                         </div>
                     </div>
 
@@ -221,8 +221,95 @@
         <div class="col-md-2 hidden-xs">
             <img src="{{asset('storage/'.$employee->image_path)}}" class="img-responsive img-thumbnail ">
         </div>
+    </div>
+</div>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 ">
+            <form class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Academic Degrees</legend>
+
+                    @foreach($academic_degrees as $degree)
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="ID">Educational Qualification</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-book">
+                                    </i>
+                                </div>
+                                <input value="{{$degree->educational_qualification}}" type="text" placeholder="Educational Qualification" class="form-control input-md"  readonly>
+                            </div>
+                        </div>
+                    </div>
 
 
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="college">College</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-university">
+                                    </i>
+                                </div>
+                                <input value="{{$degree->college}}"  type="text" placeholder="college" class="form-control input-md"  readonly>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="college">College Major</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-book">
+                                        </i>
+                                    </div>
+                                    <input value="{{$degree->college_major}}"  type="text" placeholder="college_major" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="Date Of Birth">Graduation Date</label>
+                        <div class="col-md-4">
+
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+
+                                </div>
+                                <input value="{{$degree->graduation_date}}"  type="text" placeholder="Graduation Date" class="form-control input-md"  readonly>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="Overview (max 200 words)">Details</label>
+                        <div class="col-md-6">
+                            <textarea class="form-control" rows="3" readonly>{{$degree->details}}</textarea>
+                        </div>
+                    </div>
+
+                        <br><br>
+                @endforeach
+                </fieldset>
+            </form>
+        </div>
     </div>
 </div>
 

@@ -38,19 +38,19 @@ class Employee extends Model
 
 
     public function academic_degrees(){
-        return $this->hasMany(AcademicDegree::class);
+        return $this->hasMany(AcademicDegree::class,'employee_id','employee_id');
     }
 
     public function courses(){
-        return $this->hasMany(Course::class);
+        return $this->hasMany(Course::class,'employee_id','employee_id');
     }
 
     public function expertises(){
-        return $this->hasMany(Expertise::class);
+        return $this->hasMany(Expertise::class,'employee_id','employee_id');
     }
 
     public function families(){
-        return$this->hasMany(Family::class);
+        return$this->hasMany(Family::class,'employee_id','employee_id');
     }
 
 

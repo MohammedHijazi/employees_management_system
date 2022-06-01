@@ -45,10 +45,17 @@
                             <td class="hidden-xs">{{$employee->employee_id}}</td>
                           <td >{{ $employee->first_name }} {{$employee->second_name}} {{$employee->third_name}} {{$employee->last_name}} </td>
                           <td class="hidden-xs">{{$employee->specialization}}</td>
-                          <td colspan="2">
+                          <td colspan="3">
                             <form class="row" method="POST" action="{{route('employees.destroy',$employee->employee_id)}}" onsubmit = "return confirm('Are you sure?')">
                                 @csrf
                                 @method('delete')
+                                <a href="{{route('employees.show',$employee->employee_id)}}" class="btn btn-info  btn-margin">
+                                    @if($employee->gender=='male')
+                                        <i class="fa fa-male "></i>
+                                    @else
+                                        <i class="fa fa-female "></i>
+                                    @endif
+                                </a>
                                 <a href="{{route('employees.edit',$employee->employee_id)}}" class="btn btn-info  btn-margin">
                                   <i class="fa fa-edit "></i>
                                 </a>
