@@ -11,7 +11,7 @@
             <div class="modal-body" >
                 <div class="panel panel-default">
                     <div class="panel-body" >
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('courses.store') }}" enctype="multipart/form-data" >
+                        <form  id="course" class="form-horizontal" role="form" method="POST" action="{{ route('courses.store') }}" enctype="multipart/form-data" >
                             @csrf
                             <input type="hidden" name="employee_id" value="{{$employee->employee_id}}">
 

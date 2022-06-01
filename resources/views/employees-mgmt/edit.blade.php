@@ -186,19 +186,25 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <div class="col-sm-4">
-                                        <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#addDegree">
-                                            <i class="fa fa-plus"></i> {{__('Add Academic Qualification')}}
-                                        </button>
-                                    </div>
-                                    @include('academic-degrees-mgmt.create')
-                                    <div class="col-sm-4">
-                                        <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#addCourse">
-                                            <i class="fa fa-plus"></i> {{__('Add Course')}}
-                                        </button>
-                                    </div>
-                                    @include('courses-mgmt.create')
                                 </div>
+
+                            </div>
+                            <div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#addDegree">
+                                        <i class="fa fa-plus"></i> {{__('Add Academic Qualification')}}
+                                    </button>
+                                </div>
+                                @include('academic-degrees-mgmt.create')
+                            </div>
+
+                            <div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#addCourse">
+                                        <i class="fa fa-plus"></i> {{__('Add Course')}}
+                                    </button>
+                                </div>
+                                @include('courses-mgmt.create')
                             </div>
                         </div>
                     </div>

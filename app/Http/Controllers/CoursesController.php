@@ -22,12 +22,13 @@ class CoursesController extends Controller
 
     public function store(Request $request)
     {
+
         $request->validate([
-            'educational_qualification'=>'required|string|min:10|max:100',
-            'college'=>'required|string|min:5|max:100',
-            'college_major'=>'required|string|min:5|max:100',
-            'graduation_date'=>'required',
-            'details'=>'string|min:10|max:200',
+            'name' => 'required|max:50',
+            'place' => 'required|max:100',
+            'start_date'=>'required|before:end_date',
+            'end_date'=>'required|after:start_date',
+            'details'=>'string|max:200',
         ]);
 
 
