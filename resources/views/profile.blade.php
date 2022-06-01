@@ -293,10 +293,6 @@
                         </div>
                     </div>
 
-
-
-
-
                     <!-- Textarea -->
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Overview (max 200 words)">Details</label>
@@ -307,6 +303,92 @@
 
                         <br><br>
                 @endforeach
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 ">
+            <form class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Courses</legend>
+
+                    @foreach($courses as $course)
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="ID">Course Name</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-book">
+                                        </i>
+                                    </div>
+                                    <input value="{{$course->name}}" type="text" placeholder="Course Name" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="college">Course Place</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-location-arrow">
+                                        </i>
+                                    </div>
+                                    <input value="{{$course->place}}"  type="text" placeholder="Course Place" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Date Of Birth">Start Date</label>
+                            <div class="col-md-4">
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+
+                                    </div>
+                                    <input value="{{$course->start_date}}"  type="text" placeholder="Start Date" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Date Of Birth">End Date</label>
+                            <div class="col-md-4">
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+
+                                    </div>
+                                    <input value="{{$course->end_date}}"  type="text" placeholder="End Date" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Overview (max 200 words)">Details</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control" rows="3" readonly>{{$course->details}}</textarea>
+                            </div>
+                        </div>
+
+                        <br><br>
+                    @endforeach
                 </fieldset>
             </form>
         </div>
