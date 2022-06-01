@@ -10,13 +10,14 @@ class Expertise extends Model
     use HasFactory;
 
     protected $fillable=[
-      'place_of_work',
-      'job_title',
-      'salary',
-      'currency',
-      'details',
-      'start_date',
-      'end_date'
+        'employee_id',
+        'place_of_work',
+        'job_title',
+        'salary',
+         'currency',
+         'details',
+         'start_date',
+          'end_date'
     ];
 
     protected $hidden=[

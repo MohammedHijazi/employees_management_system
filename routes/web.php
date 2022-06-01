@@ -23,3 +23,5 @@ Route::resource('degrees','AcademicDegreesController');
 
 Route::resource('courses','CoursesController');
 
+Route::resource('expertises','ExpertisesController');
+

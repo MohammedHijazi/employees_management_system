@@ -83,6 +83,14 @@
             autoclose: true,
             format: 'yyyy/mm/dd'
         });
+        $('#e_start_date').datepicker({
+            autoclose: true,
+            format: 'yyyy/mm/dd'
+        });
+        $('#e_end_date').datepicker({
+            autoclose: true,
+            format: 'yyyy/mm/dd'
+        });
         $('#from').datepicker({
             autoclose: true,
             format: 'yyyy/mm/dd'

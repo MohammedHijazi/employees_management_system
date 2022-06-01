@@ -206,6 +206,15 @@
                                 </div>
                                 @include('courses-mgmt.create')
                             </div>
+
+                            <div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#addExpertise">
+                                        <i class="fa fa-plus"></i> {{__('Add Expertise')}}
+                                    </button>
+                                </div>
+                                @include('expertises-mgmt.create')
+                            </div>
                         </div>
                     </div>
                 </div>
