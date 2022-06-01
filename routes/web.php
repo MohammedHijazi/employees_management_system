@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\AcademicDegreesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[EmployeesController::class,'index']);
 
 Route::resource('employees','EmployeesController');
+
+Route::resource('degrees','AcademicDegreesController');
+
+Route::resource('courses','CoursesController');

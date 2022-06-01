@@ -39,6 +39,8 @@
     "Employee added successfully": "تمت إضافة الموظف بنجاح",
     "Employee updated successfully": "تم تحديث الموظف بنجاح.",
     "Employee deleted successfully": "تم حذف الموظف بنجاح",
-    "Employee Mangement": "إدارة الموظفين"
+    "Employee Mangement": "إدارة الموظفين",
+    "Add Academic Qualification": "إضافة شهادة أكاديمية",
+    "Add Degree": "إضافة شهادة علمية"
 
 }

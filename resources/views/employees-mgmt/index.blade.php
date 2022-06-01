@@ -1,4 +1,5 @@
 @extends('employees-mgmt.base')
+@extends('layouts.header')
 @section('action-content')
     <section class="content" dir="rtl">
       <div class="box">

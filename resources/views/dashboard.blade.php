@@ -1,6 +1,5 @@
-
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html >
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,13 +19,9 @@
   </head>
 
 <body class="hold-transition skin-red sidebar-mini">
-<div class="wrapper">
+<!-- Main Header -->
 
-  <!-- Main Header -->
-  @include('layouts.header')
-  <!-- Sidebar -->
-  @include('layouts.sidebar')
-
+<div class="wrapper" >
     <section class="content">
         @include('employees-mgmt.index')
     </section>

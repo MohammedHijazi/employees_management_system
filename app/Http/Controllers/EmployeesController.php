@@ -109,7 +109,6 @@ class EmployeesController extends Controller
             'second_name'=>'required|string|min:3|max:15',
             'third_name'=>'required|string|min:3|max:15',
             'last_name'=>'required|string|min:3|max:15',
-            'employee_id'=>'required|integer|min:000000000|max:999999999|digits_between: 0,9|unique:employees,employee_id',
             'email'=>'required|email:rfc,dns',
             'address'=>'required|min:5|max:200',
             'mobile_number'=>'required',

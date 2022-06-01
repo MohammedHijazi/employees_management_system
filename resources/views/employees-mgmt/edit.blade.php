@@ -1,7 +1,6 @@
 @extends('employees-mgmt.base')
 
-@include('layouts.header')
-@include('layouts.sidebar')
+@extends('layouts.header')
 @section('action-content')
     <section class="content" >
         <div class="box">
@@ -14,9 +13,10 @@
                         <div class="col-md-11 ">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 style="font-weight:bolder; text-transform:uppercase; font-family: 'Times New Roman', Times, serif; color:red">Update employee</h3>
+                                    <h3 style="font-weight:bolder; text-transform:uppercase; font-family: 'Times New Roman', Times, serif; color:red">
+                                        {{__('Update employee')}}</h3>
                                     </div>
-                                <div class="panel-body" dir="ltr">
+                                <div class="panel-body">
                                     <form class="form-horizontal" role="form" method="POST" action="{{ route('employees.update',$employee->employee_id ) }}" enctype="multipart/form-data">
                                         @method('put')
                                         @csrf
@@ -177,14 +177,27 @@
                                             @endif
                                     </div>
                                     <br><br><br><br>
+
                                         <div class="form-group pull-right">
                                             <div class="col-md-6 ">
                                                 <button type="submit" class="btn btn-primary">
-                                                   <i class="fa fa-refresh"> Update Employee</i>
+                                                   <i class="fa fa-refresh"> {{__('Update employee')}}</i>
                                                 </button>
                                             </div>
                                         </div>
                                     </form>
+                                    <div class="col-sm-4">
+                                        <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#addDegree">
+                                            <i class="fa fa-plus"></i> {{__('Add Academic Qualification')}}
+                                        </button>
+                                    </div>
+                                    @include('academic-degrees-mgmt.create')
+                                    <div class="col-sm-4">
+                                        <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#addCourse">
+                                            <i class="fa fa-plus"></i> {{__('Add Course')}}
+                                        </button>
+                                    </div>
+                                    @include('courses-mgmt.create')
                                 </div>
                             </div>
                         </div>
@@ -194,3 +207,4 @@
         </section>
 
 @endsection
+

@@ -12,6 +12,7 @@ class AcademicDegree extends Model
     protected $table ='academic_degrees';
 
     protected $fillable=[
+        'employee_id',
         'educational_qualification',
         'college',
         'college_major',
