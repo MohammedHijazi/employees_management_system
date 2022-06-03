@@ -91,6 +91,10 @@
             autoclose: true,
             format: 'yyyy/mm/dd'
         });
+        $('#f_birth_date').datepicker({
+            autoclose: true,
+            format: 'yyyy/mm/dd'
+        });
         $('#from').datepicker({
             autoclose: true,
             format: 'yyyy/mm/dd'

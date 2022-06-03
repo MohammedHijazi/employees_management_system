@@ -25,3 +25,5 @@ Route::resource('courses','CoursesController');
 
 Route::resource('expertises','ExpertisesController');
 
+Route::resource('families','FamilyController');
+

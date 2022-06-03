@@ -215,6 +215,15 @@
                                 </div>
                                 @include('expertises-mgmt.create')
                             </div>
+
+                            <div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#addFamily">
+                                        <i class="fa fa-plus"></i> {{__('Add Family Member')}}
+                                    </button>
+                                </div>
+                                @include('family-mgmt.create')
+                            </div>
                         </div>
                     </div>
                 </div>
