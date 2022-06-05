@@ -402,7 +402,7 @@
     </div>
 </div>
 <!--------------------------------------------------------------------------------------------------------------------->
-<!--courses section-->
+<!--expertise section-->
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <div class="container">
@@ -502,6 +502,124 @@
         </div>
     </div>
 </div>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+<!--family members section-->
+<!--------------------------------------------------------------------------------------------------------------------->
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 ">
+            <form class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Family Members</legend>
+
+                    @foreach($family_members as $family_member)
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="ID">ID</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-user">
+                                        </i>
+                                    </div>
+                                    <input value="{{$family_member->id_number}}" type="text" placeholder="ID" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="ID">Name</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-user">
+                                        </i>
+                                    </div>
+                                    <input value="{{$family_member->full_name}}" type="text" placeholder="Full Name" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="ID">Relation</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-user">
+                                        </i>
+                                    </div>
+                                    <input value="{{$family_member->relation}}" type="text" placeholder="Relation" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="ID">Date Of Birth</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar">
+                                        </i>
+                                    </div>
+                                    <input value="{{$family_member->birth_date}}" type="text" placeholder="Date Of Birth" class="form-control input-md"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Multiple Radios (inline) -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="radios">Social Status:</label>
+                            <div class="col-md-4">
+                                @if($family_member->social_status == 'single')
+                                    <label class="radio-inline">Single</label>
+                                @else
+                                    <label class="radio-inline">Married</label>
+                                @endif
+
+                            </div>
+                        </div>
+
+                        <!-- Multiple Radios (inline) -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="radios">Study Status:</label>
+                            <div class="col-md-4">
+                                @if($family_member->study == 'yes')
+                                    <label class="radio-inline">Yes</label>
+                                @else
+                                    <label class="radio-inline">No</label>
+                                @endif
+                            </div>
+                        </div>
+
+                        <!-- Multiple Radios (inline) -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="radios">Work Status:</label>
+                            <div class="col-md-4">
+                                @if($family_member->works == 'yes')
+                                    <label class="radio-inline">Yes</label>
+                                @else
+                                    <label class="radio-inline">No</label>
+                                @endif
+                            </div>
+                        </div>
+                        <br><br>
+                    @endforeach
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
 <script src="{{ asset ("/bower_components/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js") }}"></script>
 <script src="{{ asset ("/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js") }}" type="text/javascript"></script>
 

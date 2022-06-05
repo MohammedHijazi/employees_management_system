@@ -66,11 +66,13 @@ class EmployeesController extends Controller
         $academic_degrees = $employee->academic_degrees;
         $courses = $employee->courses;
         $expertises = $employee->expertises;
+        $family_members = $employee->families;
         return view('profile',[
             'employee'=>$employee,
             'academic_degrees'=>$academic_degrees,
             'courses'=>$courses,
-            'expertises'=>$expertises
+            'expertises'=>$expertises,
+            'family_members'=>$family_members
         ]);
     }
 
