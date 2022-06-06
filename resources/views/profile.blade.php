@@ -494,7 +494,7 @@
                     </fieldset>
                 </form>
 
-                <a href="{{route('expertises.edit',$expertise->id)}}" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Edit</a>
+                <a style="margin-left: 325px" href="{{route('expertises.edit',$expertise->id)}}" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a>
 
 
                 <br><br>
@@ -607,6 +607,8 @@
 
                 </fieldset>
                  </form>
+                <a style="margin-left: 325px" href="{{route('families.edit',$family_member->id)}}" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+
                 <br><br>
             @endforeach
         </div>
