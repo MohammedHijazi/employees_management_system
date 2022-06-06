@@ -45,13 +45,25 @@ class ExpertisesController extends Controller
 
     public function edit($id)
     {
-        //
+        $expertise=Expertise::findOrFail($id);
+        return view('expertises-mgmt.edit',compact('expertise'));
     }
 
 
     public function update(Request $request, $id)
     {
-        //
+        $Expertise=Expertise::findOrFail($id);
+        $request->validate([
+            'place_of_work' => 'required|max:100',
+            'job_title' => 'required|max:100',
+            'salary' => 'required|numeric|min:0|',
+            'currency' => 'required|max:3|min:3',
+            'start_date'=>'required|before:end_date|before:today',
+            'end_date'=>'required|after:start_date',
+            'details'=>'string|max:200',
+        ]);
+        $Expertise->update($request->all());
+        return redirect()->route('employees.index')->with('success', 'Expertise has been updated successfully');
     }
 
 
