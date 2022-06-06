@@ -27,7 +27,9 @@
             /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
         }
 
-        .othertop{margin-top:10px;}
+        .othertop {
+            margin-top: 10px;
+        }
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -41,231 +43,231 @@
 
 <body>
 
-<!--------------------------------------------------------------------------------------------------------------------->
-<!--Basic info section-->
-<!--------------------------------------------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------------------------------------------------------->
+    <!--Basic info section-->
+    <!--------------------------------------------------------------------------------------------------------------------->
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 ">
-            <form class="form-horizontal">
-                <fieldset>
-                    <!-- Form Name -->
-                    <legend>Employee profile</legend>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 ">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <legend>Employee profile</legend>
 
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="ID">ID</label>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-user">
-                                    </i>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="ID">ID</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-user">
+                                        </i>
+                                    </div>
+                                    <input value="{{$employee->employee_id}}" type="text" placeholder="ID" class="form-control input-md" readonly>
                                 </div>
-                                <input value="{{$employee->employee_id}}" type="text" placeholder="ID" class="form-control input-md"  readonly>
                             </div>
                         </div>
-                    </div>
 
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Name (Full name)">Name (Full name)</label>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-user">
-                                    </i>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Name (Full name)">Name (Full name)</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-user">
+                                        </i>
+                                    </div>
+                                    <input value="{{$employee->full_name}}" type="text" placeholder="Name (Full name)" class="form-control input-md" readonly>
                                 </div>
-                                <input value="{{$employee->full_name}}"  type="text" placeholder="Name (Full name)" class="form-control input-md"  readonly>
                             </div>
                         </div>
-                    </div>
 
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Date Of Birth">Date Of Birth</label>
-                        <div class="col-md-4">
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Date Of Birth">Date Of Birth</label>
+                            <div class="col-md-4">
 
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-birthday-cake"></i>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-birthday-cake"></i>
 
+                                    </div>
+                                    <input value="{{$employee->birth_date}}" type="text" placeholder="Date Of Birth" class="form-control input-md" readonly>
                                 </div>
-                                <input value="{{$employee->birth_date}}"  type="text" placeholder="Date Of Birth" class="form-control input-md"  readonly>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Date Of Birth">Date Of Hiring</label>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-calendar"></i>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Date Of Birth">Date Of Hiring</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input value="{{$employee->hiring_date}}" type="text" placeholder="Date Of Hiring" class="form-control input-md" readonly>
                                 </div>
-                                <input value="{{$employee->hiring_date}}"  type="text" placeholder="Date Of Hiring" class="form-control input-md"  readonly>
                             </div>
                         </div>
-                    </div>
 
 
-                    <!-- Multiple Radios (inline) -->
+                        <!-- Multiple Radios (inline) -->
 
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Gender">Gender</label>
-                        <div class="col-md-4">
-                            <label class="radio-inline" for="Gender-0">
-                                <input type="radio" name="Gender" id="Gender-0" value="1" @if($employee->gender=='male') checked="checked" @endif disabled  >
-                                Male
-                            </label>
-                            <label class="radio-inline" for="Gender-1">
-                                <input type="radio" name="Gender" id="Gender-1" value="2" @if($employee->gender=='female') checked="checked" @endif disabled>
-                                Female
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Multiple Radios (inline) -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="radios">Marital Status:</label>
-                        <div class="col-md-4">
-                            <label class="radio-inline" for="radios-0">
-                                <input type="radio" name="radios" id="radios-0" @if($employee->social_status=='married') checked="checked" @endif disabled >
-                                Married
-                            </label>
-                            <label class="radio-inline" for="radios-1">
-                                <input type="radio" name="radios" id="radios-1" @if($employee->social_status=='single') checked="checked" @endif disabled>
-                                Unmarried
-                            </label>
-                        </div>
-                    </div>
-
-
-
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Primary Occupation">Specialization</label>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-briefcase"></i>
-
-                                </div>
-                                <input value="{{$employee->specialization}}"  type="text" placeholder="Specialization" class="form-control input-md" readonly>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Gender">Gender</label>
+                            <div class="col-md-4">
+                                <label class="radio-inline" for="Gender-0">
+                                    <input type="radio" name="Gender" id="Gender-0" value="1" @if($employee->gender=='male') checked="checked" @endif disabled >
+                                    Male
+                                </label>
+                                <label class="radio-inline" for="Gender-1">
+                                    <input type="radio" name="Gender" id="Gender-1" value="2" @if($employee->gender=='female') checked="checked" @endif disabled>
+                                    Female
+                                </label>
                             </div>
-
-
                         </div>
-                    </div>
 
-
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Phone number ">Phone number </label>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-phone"></i>
-                                </div>
-                                <input value="{{$employee->phone_number}}" type="text" placeholder="Phone number " class="form-control input-md" readonly>
+                        <!-- Multiple Radios (inline) -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="radios">Marital Status:</label>
+                            <div class="col-md-4">
+                                <label class="radio-inline" for="radios-0">
+                                    <input type="radio" name="radios" id="radios-0" @if($employee->social_status=='married') checked="checked" @endif disabled >
+                                    Married
+                                </label>
+                                <label class="radio-inline" for="radios-1">
+                                    <input type="radio" name="radios" id="radios-1" @if($employee->social_status=='single') checked="checked" @endif disabled>
+                                    Unmarried
+                                </label>
                             </div>
-
                         </div>
-                    </div>
 
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Phone number ">Mobile number </label>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-mobile"></i>
+
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Primary Occupation">Specialization</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-briefcase"></i>
+
+                                    </div>
+                                    <input value="{{$employee->specialization}}" type="text" placeholder="Specialization" class="form-control input-md" readonly>
                                 </div>
-                                <input value="{{$employee->mobile_number}}" type="text" placeholder="Mobile number " class="form-control input-md" readonly>
-                            </div>
 
-                        </div>
-                    </div>
-
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Email Address">Email Address</label>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-envelope-o"></i>
-
-                                </div>
-                                <input value="{{$employee->email}}" type="text" placeholder="Email Address" class="form-control input-md" readonly>
 
                             </div>
-
                         </div>
-                    </div>
 
 
 
-                    <!-- Textarea -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Overview (max 200 words)">Address</label>
-                        <div class="col-md-4">
-                            <textarea class="form-control" rows="2" readonly>{{$employee->address}}</textarea>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Phone number ">Phone number </label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <input value="{{$employee->phone_number}}" type="text" placeholder="Phone number " class="form-control input-md" readonly>
+                                </div>
+
+                            </div>
                         </div>
-                    </div>
 
-                </fieldset>
-            </form>
-        </div>
-        <div class="col-md-2 hidden-xs">
-            <img src="{{asset('storage/'.$employee->image_path)}}" class="img-responsive img-thumbnail ">
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Phone number ">Mobile number </label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-mobile"></i>
+                                    </div>
+                                    <input value="{{$employee->mobile_number}}" type="text" placeholder="Mobile number " class="form-control input-md" readonly>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Email Address">Email Address</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-envelope-o"></i>
+
+                                    </div>
+                                    <input value="{{$employee->email}}" type="text" placeholder="Email Address" class="form-control input-md" readonly>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Overview (max 200 words)">Address</label>
+                            <div class="col-md-4">
+                                <textarea class="form-control" rows="2" readonly>{{$employee->address}}</textarea>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-md-2 hidden-xs">
+                <img src="{{asset('storage/'.$employee->image_path)}}" class="img-responsive img-thumbnail ">
+            </div>
         </div>
     </div>
-</div>
-<!--------------------------------------------------------------------------------------------------------------------->
-<!--Academic Degrees section-->
-<!--------------------------------------------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------------------------------------------------------->
+    <!--Academic Degrees section-->
+    <!--------------------------------------------------------------------------------------------------------------------->
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 ">
-            <legend>Academic Degrees</legend>
-            @foreach($academic_degrees as $degree)
-            <form class="form-horizontal">
-                <fieldset>
-                    <!-- Form Name -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="ID">Educational Qualification</label>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-book">
-                                    </i>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 ">
+                <legend>Academic Degrees</legend>
+                @foreach($academic_degrees as $degree)
+                <form class="form-horizontal">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="ID">Educational Qualification</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-book">
+                                        </i>
+                                    </div>
+                                    <input value="{{$degree->educational_qualification}}" type="text" placeholder="Educational Qualification" class="form-control input-md" readonly>
                                 </div>
-                                <input value="{{$degree->educational_qualification}}" type="text" placeholder="Educational Qualification" class="form-control input-md"  readonly>
                             </div>
                         </div>
-                    </div>
 
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="college">College</label>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-university">
-                                    </i>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="college">College</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-university">
+                                        </i>
+                                    </div>
+                                    <input value="{{$degree->college}}" type="text" placeholder="college" class="form-control input-md" readonly>
                                 </div>
-                                <input value="{{$degree->college}}"  type="text" placeholder="college" class="form-control input-md"  readonly>
                             </div>
                         </div>
-                    </div>
 
 
                         <!-- Text input-->
@@ -277,55 +279,55 @@
                                         <i class="fa fa-book">
                                         </i>
                                     </div>
-                                    <input value="{{$degree->college_major}}"  type="text" placeholder="college_major" class="form-control input-md"  readonly>
+                                    <input value="{{$degree->college_major}}" type="text" placeholder="college_major" class="form-control input-md" readonly>
                                 </div>
                             </div>
                         </div>
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Date Of Birth">Graduation Date</label>
-                        <div class="col-md-4">
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Date Of Birth">Graduation Date</label>
+                            <div class="col-md-4">
 
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-calendar"></i>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
 
+                                    </div>
+                                    <input value="{{$degree->graduation_date}}" type="text" placeholder="Graduation Date" class="form-control input-md" readonly>
                                 </div>
-                                <input value="{{$degree->graduation_date}}"  type="text" placeholder="Graduation Date" class="form-control input-md"  readonly>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Textarea -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Overview (max 200 words)">Details</label>
-                        <div class="col-md-6">
-                            <textarea class="form-control" rows="3" readonly>{{$degree->details}}</textarea>
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Overview (max 200 words)">Details</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control" rows="3" readonly>{{$degree->details}}</textarea>
+                            </div>
                         </div>
-                    </div>
 
-                </fieldset>
-            </form>
-            <br><br>
-            @endforeach
+                    </fieldset>
+                </form>
+                <br><br>
+                @endforeach
 
+            </div>
         </div>
     </div>
-</div>
 
-<!--------------------------------------------------------------------------------------------------------------------->
-<!--courses section-->
-<!--------------------------------------------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------------------------------------------------------->
+    <!--courses section-->
+    <!--------------------------------------------------------------------------------------------------------------------->
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 ">
-            <legend>Courses</legend>
-            @foreach($courses as $course)
-            <form class="form-horizontal">
-                <fieldset>
-                    <!-- Form Name -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 ">
+                <legend>Courses</legend>
+                @foreach($courses as $course)
+                <form class="form-horizontal">
+                    <fieldset>
+                        <!-- Form Name -->
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="ID">Course Name</label>
                             <div class="col-md-4">
@@ -334,7 +336,7 @@
                                         <i class="fa fa-book">
                                         </i>
                                     </div>
-                                    <input value="{{$course->name}}" type="text" placeholder="Course Name" class="form-control input-md"  readonly>
+                                    <input value="{{$course->name}}" type="text" placeholder="Course Name" class="form-control input-md" readonly>
                                 </div>
                             </div>
                         </div>
@@ -349,7 +351,7 @@
                                         <i class="fa fa-location-arrow">
                                         </i>
                                     </div>
-                                    <input value="{{$course->place}}"  type="text" placeholder="Course Place" class="form-control input-md"  readonly>
+                                    <input value="{{$course->place}}" type="text" placeholder="Course Place" class="form-control input-md" readonly>
                                 </div>
                             </div>
                         </div>
@@ -365,7 +367,7 @@
                                         <i class="fa fa-calendar"></i>
 
                                     </div>
-                                    <input value="{{$course->start_date}}"  type="text" placeholder="Start Date" class="form-control input-md"  readonly>
+                                    <input value="{{$course->start_date}}" type="text" placeholder="Start Date" class="form-control input-md" readonly>
                                 </div>
                             </div>
                         </div>
@@ -380,7 +382,7 @@
                                         <i class="fa fa-calendar"></i>
 
                                     </div>
-                                    <input value="{{$course->end_date}}"  type="text" placeholder="End Date" class="form-control input-md"  readonly>
+                                    <input value="{{$course->end_date}}" type="text" placeholder="End Date" class="form-control input-md" readonly>
                                 </div>
                             </div>
                         </div>
@@ -392,105 +394,105 @@
                                 <textarea class="form-control" rows="3" readonly>{{$course->details}}</textarea>
                             </div>
                         </div>
-                 </fieldset>
+                    </fieldset>
                 </form>
                 <br><br>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
-</div>
-<!--------------------------------------------------------------------------------------------------------------------->
-<!--expertise section-->
-<!--------------------------------------------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------------------------------------------------------->
+    <!--expertise section-->
+    <!--------------------------------------------------------------------------------------------------------------------->
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 ">
-            <legend>Expertises</legend>
-            @foreach($expertises as $expertise)
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 ">
+                <legend>Expertises</legend>
+                @foreach($expertises as $expertise)
                 <form class="form-horizontal">
                     <fieldset>
                         <!-- Form Name -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="ID">Place of work</label>
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-location-arrow">
-                                            </i>
-                                        </div>
-                                        <input value="{{$expertise->place_of_work}}" type="text" placeholder="Place of work" class="form-control input-md"  readonly>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="ID">Place of work</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-location-arrow">
+                                        </i>
                                     </div>
+                                    <input value="{{$expertise->place_of_work}}" type="text" placeholder="Place of work" class="form-control input-md" readonly>
                                 </div>
                             </div>
+                        </div>
 
 
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="college">Job title</label>
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-bookmark">
-                                            </i>
-                                        </div>
-                                        <input value="{{$expertise->job_title}}"  type="text" placeholder="Job title" class="form-control input-md"  readonly>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="college">Job title</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-bookmark">
+                                        </i>
                                     </div>
+                                    <input value="{{$expertise->job_title}}" type="text" placeholder="Job title" class="form-control input-md" readonly>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="college">Salary</label>
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-money">
-                                            </i>
-                                        </div>
-                                        <input value="{{$expertise->salary.' '.$expertise->currency}}"  type="text" placeholder="Salary" class="form-control input-md"  readonly>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="college">Salary</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-money">
+                                        </i>
                                     </div>
+                                    <input value="{{$expertise->salary.' '.$expertise->currency}}" type="text" placeholder="Salary" class="form-control input-md" readonly>
                                 </div>
                             </div>
+                        </div>
 
 
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="Date Of Birth">Start Date</label>
-                                <div class="col-md-4">
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Date Of Birth">Start Date</label>
+                            <div class="col-md-4">
 
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
 
-                                        </div>
-                                        <input value="{{$expertise->start_date}}"  type="text" placeholder="Start Date" class="form-control input-md"  readonly>
                                     </div>
+                                    <input value="{{$expertise->start_date}}" type="text" placeholder="Start Date" class="form-control input-md" readonly>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="Date Of Birth">End Date</label>
-                                <div class="col-md-4">
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Date Of Birth">End Date</label>
+                            <div class="col-md-4">
 
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
 
-                                        </div>
-                                        <input value="{{$expertise->end_date}}"  type="text" placeholder="End Date" class="form-control input-md"  readonly>
                                     </div>
+                                    <input value="{{$expertise->end_date}}" type="text" placeholder="End Date" class="form-control input-md" readonly>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Textarea -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="Overview (max 200 words)">Details</label>
-                                <div class="col-md-6">
-                                    <textarea class="form-control" rows="3" readonly>{{$expertise->details}}</textarea>
-                                </div>
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Overview (max 200 words)">Details</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control" rows="3" readonly>{{$expertise->details}}</textarea>
                             </div>
+                        </div>
                     </fieldset>
                 </form>
 
@@ -498,22 +500,22 @@
 
 
                 <br><br>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
-</div>
 
-<!--------------------------------------------------------------------------------------------------------------------->
-<!--family members section-->
-<!--------------------------------------------------------------------------------------------------------------------->
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 ">
-            <legend>Family Members</legend>
-            @foreach($family_members as $family_member)
-            <form class="form-horizontal">
-                <fieldset>
-                    <!-- Form Name -->
+    <!--------------------------------------------------------------------------------------------------------------------->
+    <!--family members section-->
+    <!--------------------------------------------------------------------------------------------------------------------->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 ">
+                <legend>Family Members</legend>
+                @foreach($family_members as $family_member)
+                <form class="form-horizontal">
+                    <fieldset>
+                        <!-- Form Name -->
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="ID">ID</label>
                             <div class="col-md-4">
@@ -522,7 +524,7 @@
                                         <i class="fa fa-user">
                                         </i>
                                     </div>
-                                    <input value="{{$family_member->id_number}}" type="text" placeholder="ID" class="form-control input-md"  readonly>
+                                    <input value="{{$family_member->id_number}}" type="text" placeholder="ID" class="form-control input-md" readonly>
                                 </div>
                             </div>
                         </div>
@@ -535,7 +537,7 @@
                                         <i class="fa fa-user">
                                         </i>
                                     </div>
-                                    <input value="{{$family_member->full_name}}" type="text" placeholder="Full Name" class="form-control input-md"  readonly>
+                                    <input value="{{$family_member->full_name}}" type="text" placeholder="Full Name" class="form-control input-md" readonly>
                                 </div>
                             </div>
                         </div>
@@ -549,7 +551,7 @@
                                         <i class="fa fa-user">
                                         </i>
                                     </div>
-                                    <input value="{{$family_member->relation}}" type="text" placeholder="Relation" class="form-control input-md"  readonly>
+                                    <input value="{{$family_member->relation}}" type="text" placeholder="Relation" class="form-control input-md" readonly>
                                 </div>
                             </div>
                         </div>
@@ -563,7 +565,7 @@
                                         <i class="fa fa-calendar">
                                         </i>
                                     </div>
-                                    <input value="{{$family_member->birth_date}}" type="text" placeholder="Date Of Birth" class="form-control input-md"  readonly>
+                                    <input value="{{$family_member->birth_date}}" type="text" placeholder="Date Of Birth" class="form-control input-md" readonly>
                                 </div>
                             </div>
                         </div>
@@ -573,9 +575,9 @@
                             <label class="col-md-4 control-label" for="radios">Social Status:</label>
                             <div class="col-md-4">
                                 @if($family_member->social_status == 'single')
-                                    <label class="radio-inline">Single</label>
+                                <label class="radio-inline">Single</label>
                                 @else
-                                    <label class="radio-inline">Married</label>
+                                <label class="radio-inline">Married</label>
                                 @endif
 
                             </div>
@@ -586,9 +588,9 @@
                             <label class="col-md-4 control-label" for="radios">Study Status:</label>
                             <div class="col-md-4">
                                 @if($family_member->study == 'yes')
-                                    <label class="radio-inline">Yes</label>
+                                <label class="radio-inline">Yes</label>
                                 @else
-                                    <label class="radio-inline">No</label>
+                                <label class="radio-inline">No</label>
                                 @endif
                             </div>
                         </div>
@@ -598,31 +600,31 @@
                             <label class="col-md-4 control-label" for="radios">Work Status:</label>
                             <div class="col-md-4">
                                 @if($family_member->works == 'yes')
-                                    <label class="radio-inline">Yes</label>
+                                <label class="radio-inline">Yes</label>
                                 @else
-                                    <label class="radio-inline">No</label>
+                                <label class="radio-inline">No</label>
                                 @endif
                             </div>
                         </div>
 
-                </fieldset>
-                 </form>
+                    </fieldset>
+                </form>
                 <a style="margin-left: 325px" href="{{route('families.edit',$family_member->id)}}" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a>
 
                 <br><br>
-            @endforeach
+                @endforeach
+            </div>
+
         </div>
-
     </div>
-</div>
 
 
 
 
 
 
-<script src="{{ asset ("/bower_components/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js") }}"></script>
-<script src="{{ asset ("/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js") }}" type="text/javascript"></script>
+    <script src="{{ asset ("/bower_components/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js") }}"></script>
+    <script src="{{ asset ("/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js") }}" type="text/javascript"></script>
 
 </body>
 
