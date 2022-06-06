@@ -234,12 +234,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 ">
+            <legend>Academic Degrees</legend>
+            @foreach($academic_degrees as $degree)
             <form class="form-horizontal">
                 <fieldset>
                     <!-- Form Name -->
-                    <legend>Academic Degrees</legend>
-
-                    @foreach($academic_degrees as $degree)
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="ID">Educational Qualification</label>
                         <div class="col-md-4">
@@ -306,10 +305,11 @@
                         </div>
                     </div>
 
-                        <br><br>
-                @endforeach
                 </fieldset>
             </form>
+            <br><br>
+            @endforeach
+
         </div>
     </div>
 </div>
@@ -321,12 +321,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 ">
+            <legend>Courses</legend>
+            @foreach($courses as $course)
             <form class="form-horizontal">
                 <fieldset>
                     <!-- Form Name -->
-                    <legend>Courses</legend>
-
-                    @foreach($courses as $course)
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="ID">Course Name</label>
                             <div class="col-md-4">
@@ -393,11 +392,10 @@
                                 <textarea class="form-control" rows="3" readonly>{{$course->details}}</textarea>
                             </div>
                         </div>
-
-                        <br><br>
-                    @endforeach
-                </fieldset>
-            </form>
+                 </fieldset>
+                </form>
+                <br><br>
+            @endforeach
         </div>
     </div>
 </div>
@@ -408,12 +406,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 ">
+            <legend>Expertises</legend>
+            @foreach($expertises as $expertise)
             <form class="form-horizontal">
                 <fieldset>
                     <!-- Form Name -->
-                    <legend>Expertises</legend>
-
-                    @foreach($expertises as $expertise)
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="ID">Place of work</label>
                             <div class="col-md-4">
@@ -494,11 +491,10 @@
                                 <textarea class="form-control" rows="3" readonly>{{$expertise->details}}</textarea>
                             </div>
                         </div>
-
-                        <br><br>
-                    @endforeach
                 </fieldset>
             </form>
+            <br><br>
+            @endforeach
         </div>
     </div>
 </div>
@@ -509,13 +505,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 ">
+            <legend>Family Members</legend>
+            @foreach($family_members as $family_member)
             <form class="form-horizontal">
                 <fieldset>
                     <!-- Form Name -->
-                    <legend>Family Members</legend>
-
-                    @foreach($family_members as $family_member)
-
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="ID">ID</label>
                             <div class="col-md-4">
@@ -606,10 +600,11 @@
                                 @endif
                             </div>
                         </div>
-                        <br><br>
-                    @endforeach
+
                 </fieldset>
-            </form>
+                 </form>
+                <br><br>
+            @endforeach
         </div>
 
     </div>

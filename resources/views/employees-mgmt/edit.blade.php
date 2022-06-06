@@ -186,44 +186,48 @@
                                             </div>
                                         </div>
                                     </form>
+                                    <div>
+                                        <div>
+                                            <div class="col-sm-4">
+                                                <button type="button" class="btn btn-info " data-toggle="modal" data-target="#addDegree">
+                                                    <i class="fa fa-plus"></i> {{__('Add Academic Qualification')}}
+                                                </button>
+                                            </div>
+                                            @include('academic-degrees-mgmt.create')
+                                        </div>
+
+                                        <div>
+                                            <div class="col-sm-4">
+                                                <button type="button" class="btn btn-info " data-toggle="modal" data-target="#addCourse">
+                                                    <i class="fa fa-plus"></i> {{__('Add Course')}}
+                                                </button>
+                                            </div>
+                                            @include('courses-mgmt.create')
+                                        </div>
+
+                                        <div>
+                                            <div class="col-sm-4">
+                                                <button type="button" class="btn btn-info " data-toggle="modal" data-target="#addExpertise">
+                                                    <i class="fa fa-plus"></i> {{__('Add Expertise')}}
+                                                </button>
+                                            </div>
+                                            @include('expertises-mgmt.create')
+                                        </div>
+
+                                        <div>
+                                            <div class="col-sm-4">
+                                                <button type="button" class="btn btn-info " data-toggle="modal" data-target="#addFamily">
+                                                    <i class="fa fa-plus"></i> {{__('Add Family Member')}}
+                                                </button>
+                                            </div>
+                                            @include('family-mgmt.create')
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>
-                            <div>
-                                <div class="col-sm-4">
-                                    <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#addDegree">
-                                        <i class="fa fa-plus"></i> {{__('Add Academic Qualification')}}
-                                    </button>
-                                </div>
-                                @include('academic-degrees-mgmt.create')
-                            </div>
 
-                            <div>
-                                <div class="col-sm-4">
-                                    <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#addCourse">
-                                        <i class="fa fa-plus"></i> {{__('Add Course')}}
-                                    </button>
-                                </div>
-                                @include('courses-mgmt.create')
-                            </div>
 
-                            <div>
-                                <div class="col-sm-4">
-                                    <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#addExpertise">
-                                        <i class="fa fa-plus"></i> {{__('Add Expertise')}}
-                                    </button>
-                                </div>
-                                @include('expertises-mgmt.create')
-                            </div>
-
-                            <div>
-                                <div class="col-sm-4">
-                                    <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#addFamily">
-                                        <i class="fa fa-plus"></i> {{__('Add Family Member')}}
-                                    </button>
-                                </div>
-                                @include('family-mgmt.create')
-                            </div>
                         </div>
                     </div>
                 </div>

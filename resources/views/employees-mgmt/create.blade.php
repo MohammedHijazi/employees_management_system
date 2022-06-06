@@ -13,8 +13,8 @@
                 <div class="panel-heading">
                     <h3 class="modal-title" id="exampleModalLongTitle" style="font-weight:bolder; text-transform:uppercase; font-family: 'Times New Roman', Times, serif; color:red">{{__('New employee Portal')}} </h3>
                 </div>
-                <div class="panel-body" dir="rtl">
-                    <form class="form-horizontal gg" role="form" method="POST" action="{{ route('employees.store') }}" enctype="multipart/form-data" >
+                <div class="panel-body" >
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('employees.store') }}" enctype="multipart/form-data" >
                         @csrf
 
                         <div class="form-row">
