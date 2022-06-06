@@ -20,11 +20,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Expertise::factory(15)->create();
         Employee::factory(10)->create();
+        Expertise::factory(15)->create();       
         AcademicDegree::factory(10)->create();
         Course::factory(15)->create();
         Family::factory(30)->create();
         //User::factory(10)->create();
+        
     }
 }
